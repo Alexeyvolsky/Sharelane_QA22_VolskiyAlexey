@@ -43,9 +43,7 @@ public class ShareLaneTests {
         WebElement continueButton = driver.findElement(By.cssSelector("[value=Continue]"));
         continueButton.click();
         zipCodeInput = driver.findElement(By.name("zip_code"));
-        Assert.assertEquals(zipCodeInput.isDisplayed(), false);
-        WebElement firstNameInput = driver.findElement(By.name("first_name"));
-        Assert.assertEquals(firstNameInput.isDisplayed(), true);
+        Assert.assertTrue(zipCodeInput.isDisplayed());
     }
     @Test
     public void pozitiveSignUp(){
@@ -73,7 +71,7 @@ public class ShareLaneTests {
         WebElement registerButton = driver.findElement(By.cssSelector("[value=Register]"));
         registerButton.click();
         WebElement accountIsCreated = driver.findElement(By.cssSelector("[class=confirmation_message]"));
-        Assert.assertEquals(accountIsCreated.isDisplayed(),true);
+        Assert.assertTrue(accountIsCreated.isDisplayed());
     }
     @Test
     public void negativeSignUp(){
@@ -101,8 +99,6 @@ public class ShareLaneTests {
         WebElement registerButton = driver.findElement(By.cssSelector("[value=Register]"));
         registerButton.click();
         passwordInput = driver.findElement(By.name("password1"));
-        Assert.assertEquals(passwordInput.isDisplayed(),false);
-        WebElement accountIsCreated = driver.findElement(By.cssSelector("[class=confirmation_message]"));
-        Assert.assertEquals(accountIsCreated.isDisplayed(),true);
+        Assert.assertTrue(passwordInput.isDisplayed());
     }
 }
